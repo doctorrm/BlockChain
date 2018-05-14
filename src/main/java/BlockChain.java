@@ -3,12 +3,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * 模拟一次钱包交易
+ * 模拟钱包交易
  * 
  * @Author doctorrm
  * @Time 2018-05-13 9:10:00 PM
  */
-public class BlockChain2 {
+public class BlockChain {
 
 	public static ArrayList<Block> blockchain = new ArrayList<Block>();
 
@@ -22,16 +22,15 @@ public class BlockChain2 {
 	public static Transaction genesisTransaction;// 第一个区块中的事务
 
 	public static void main(String[] args) {
-		// add our blocks to the blockchain ArrayList:
-		Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider()); // Setup Bouncey castle as a
-																						// Security Provider
+		// Setup Bouncey castle as a Security Provider
+		Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider()); 
 
 		// Create wallets:
 		walletA = new Wallet();
 		walletB = new Wallet();
 		Wallet coinbase = new Wallet();
 
-		// create genesis transaction, which sends 100 NoobCoin to walletA:
+		// create genesis transaction, which sends 100 Coins to walletA:
 		genesisTransaction = new Transaction(coinbase.publicKey, walletA.publicKey, 100f, null);
 		genesisTransaction.generateSignature(coinbase.privateKey); // manually sign the genesis transaction
 		genesisTransaction.transactionId = "0"; // manually set the transaction id
@@ -96,7 +95,7 @@ public class BlockChain2 {
 				System.out.println("#Previous Hashes not equal");
 				return false;
 			}
-			// check if hash is solved
+			// check if hash is solved，每个区块都必须被挖过
 			if (!currentBlock.hash.substring(0, difficulty).equals(hashTarget)) {
 				System.out.println("#This block hasn't been mined");
 				return false;
@@ -112,7 +111,7 @@ public class BlockChain2 {
 					return false;
 				}
 				if (currentTransaction.getInputsValue() != currentTransaction.getOutputsValue()) {
-					System.out.println("#Inputs are note equal to outputs on Transaction(" + t + ")");
+					System.out.println("#Inputs are not equal to outputs on Transaction(" + t + ")");
 					return false;
 				}
 
@@ -148,7 +147,7 @@ public class BlockChain2 {
 			}
 
 		}
-		System.out.println("Blockchain is valid");
+		System.out.println("\nBlockchain is valid");
 		return true;
 	}
 
