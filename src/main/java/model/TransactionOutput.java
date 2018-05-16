@@ -1,4 +1,7 @@
+package model;
 import java.security.PublicKey;
+
+import util.StringUtil;
 
 public class TransactionOutput {
 	public String id;

@@ -1,6 +1,9 @@
+package model;
 
 import java.util.ArrayList;
 import java.util.Date;
+
+import util.StringUtil;
 
 /**
  * 单一区块
@@ -37,7 +40,7 @@ public class Block {
 	 * Increases nonce value until hash target is reached.
 	 * 
 	 * 挖矿：整出（一直尝试计算）头部前difficult（5）位都是0的hash。很大程度依赖于时间戳和nonce
-	 * 困惑：为何要挖矿？不就是整出一个新的hash？起规整作用？
+	 * 困惑：为何要挖矿？不就是整出一个新的hash？起规整作用？ 答：1.可产生金币并确保网络算力不会被入侵者占据；2.矿工负责记录事务
 	 * 
 	 * @param difficulty
 	 */

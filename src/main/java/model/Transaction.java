@@ -1,5 +1,9 @@
+package model;
 import java.security.*;
 import java.util.ArrayList;
+
+import test.BlockChain;
+import util.StringUtil;
 
 public class Transaction {
 
@@ -103,7 +107,6 @@ public class Transaction {
 				continue; // if Transaction can't be found, skip it
 			BlockChain.UTXOs.remove(i.UTXO.id);
 		}
-
 		return true;
 	}
 
@@ -136,5 +139,4 @@ public class Transaction {
 		}
 		return total;
 	}
-
 }

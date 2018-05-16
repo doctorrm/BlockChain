@@ -1,8 +1,11 @@
+package model;
 import java.security.*;
 import java.security.spec.ECGenParameterSpec;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import test.BlockChain;
 
 /**
  * 钱包

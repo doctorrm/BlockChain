@@ -1,3 +1,4 @@
+package util;
 
 import java.security.Key;
 import java.security.MessageDigest;
@@ -7,6 +8,8 @@ import java.security.Signature;
 import java.util.ArrayList;
 import java.util.Base64;
 
+import model.Transaction;
+
 /**
  * 加密辅助类
  * 
@@ -14,7 +17,7 @@ import java.util.Base64;
  * @Time 2018-05-13 8:23:59 PM
  */
 public class StringUtil {
-	// Applies Sha256 to a string and returns the result.
+	// Applies Sha256 to a string and returns the result.加密
 	public static String applySha256(String input) {
 		try {
 			MessageDigest digest = MessageDigest.getInstance("SHA-256");

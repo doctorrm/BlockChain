@@ -1,6 +1,13 @@
+package test;
 import java.security.Security;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import model.Block;
+import model.Transaction;
+import model.TransactionInput;
+import model.TransactionOutput;
+import model.Wallet;
 
 /**
  * 模拟钱包交易
@@ -23,7 +30,7 @@ public class BlockChain {
 
 	public static void main(String[] args) {
 		// Setup Bouncey castle as a Security Provider
-		Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider()); 
+		Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
 
 		// Create wallets:
 		walletA = new Wallet();
@@ -71,6 +78,11 @@ public class BlockChain {
 
 	}
 
+	/**
+	 * 用于接收者验证，成本低
+	 * 
+	 * @return
+	 */
 	public static Boolean isChainValid() {
 		Block currentBlock;
 		Block previousBlock;
@@ -151,6 +163,11 @@ public class BlockChain {
 		return true;
 	}
 
+	/**
+	 * 区块加入链之前会被挖矿，用于发送时，耗成本，避免垃圾消息的发送。也可以认为挖矿就是在区块链中创建区块的过程。
+	 * 
+	 * @param newBlock
+	 */
 	public static void addBlock(Block newBlock) {
 		newBlock.mineBlock(difficulty);
 		blockchain.add(newBlock);

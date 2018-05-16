@@ -12,6 +12,7 @@ https://medium.com/@cryptokass/importing-bouncy-castle-into-eclipse-24e0dda55f21
 **参考博客：**<br>
 https://medium.com/programmers-blockchain/creating-your-first-blockchain-with-java-part-2-transactions-2cdac335e0ce
 
+https://blog.csdn.net/lucky_greenegg/article/details/52821924
 
 ![](img/blockchain_overview.png)
 目前本项目主要实现的是协议层的存储层。
