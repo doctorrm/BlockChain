@@ -1,4 +1,4 @@
-package model;
+package org.yi.model;
 
 public class TransactionInput {
 	public String transactionOutputId; // Reference to TransactionOutputs -> transactionId

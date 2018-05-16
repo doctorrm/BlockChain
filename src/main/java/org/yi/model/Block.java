@@ -1,9 +1,9 @@
-package model;
+package org.yi.model;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import util.StringUtil;
+import org.yi.util.StringUtil;
 
 /**
  * 单一区块

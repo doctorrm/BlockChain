@@ -1,7 +1,7 @@
-package model;
+package org.yi.model;
 import java.security.PublicKey;
 
-import util.StringUtil;
+import org.yi.util.StringUtil;
 
 public class TransactionOutput {
 	public String id;

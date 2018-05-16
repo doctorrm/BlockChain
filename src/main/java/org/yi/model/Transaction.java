@@ -1,9 +1,9 @@
-package model;
+package org.yi.model;
 import java.security.*;
 import java.util.ArrayList;
 
-import test.BlockChain;
-import util.StringUtil;
+import org.yi.test.BlockChain;
+import org.yi.util.StringUtil;
 
 public class Transaction {
 

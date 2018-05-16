@@ -1,4 +1,4 @@
-package util;
+package org.yi.util;
 
 import java.security.Key;
 import java.security.MessageDigest;
@@ -8,7 +8,7 @@ import java.security.Signature;
 import java.util.ArrayList;
 import java.util.Base64;
 
-import model.Transaction;
+import org.yi.model.Transaction;
 
 /**
  * 加密辅助类

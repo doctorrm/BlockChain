@@ -1,6 +1,11 @@
+import org.yi.model.Block;
+
+import com.google.gson.GsonBuilder;
 
 public class Appler {
 	public static void main(String[] args) {
-		System.out.println("apple");
+		Block block = new Block(null);
+		String blockJson = new GsonBuilder().setPrettyPrinting().create().toJson(block);
+		System.out.println(blockJson);
 	}
 }
