@@ -7,7 +7,7 @@ https://medium.com/@cryptokass/importing-bouncy-castle-into-eclipse-24e0dda55f21
 **功能：**<br>
 入门级别的区块链示例，包括了
 **区块的生成和校验，事务的生成与校验，钱包的生成和计算，加密等**，
-功能逐步增加中，在main主方法中测试
+功能逐步增加中
 
 **参考博客：**<br>
 https://medium.com/programmers-blockchain/creating-your-first-blockchain-with-java-part-2-transactions-2cdac335e0ce

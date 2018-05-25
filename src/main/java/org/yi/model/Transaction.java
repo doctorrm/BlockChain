@@ -2,7 +2,6 @@ package org.yi.model;
 import java.security.*;
 import java.util.ArrayList;
 
-import org.yi.test.BlockChain;
 import org.yi.util.StringUtil;
 
 public class Transaction {

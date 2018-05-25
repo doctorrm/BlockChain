@@ -1,13 +1,7 @@
-package org.yi.test;
+package org.yi.model;
 import java.security.Security;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import org.yi.model.Block;
-import org.yi.model.Transaction;
-import org.yi.model.TransactionInput;
-import org.yi.model.TransactionOutput;
-import org.yi.model.Wallet;
 
 /**
  * 模拟钱包交易
