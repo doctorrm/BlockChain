@@ -14,6 +14,13 @@ public class Agent {
 	int agentBalance;
 
 	public Agent() {
+
+	}
+
+	public Agent(String agentName, int agentAddrs) {
+		this.agentName = agentName;
+		this.agentAddrs = agentAddrs;
+		this.agentBalance = 0;
 	}
 
 	public Block createBlock(String previousHash) {

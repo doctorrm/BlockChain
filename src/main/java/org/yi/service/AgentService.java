@@ -3,19 +3,43 @@ package org.yi.service;
 import java.util.HashMap;
 import java.util.Random;
 
+import org.yi.dao.AgentDao;
 import org.yi.model.Agent;
 import org.yi.model.Block;
 import org.yi.model.Transaction;
 import org.yi.model.TransactionOutput;
 import org.yi.model.Wallet;
 
-public class NewAgentService {
+public class AgentService {
 
-	public static Transaction genesisTransaction;// 第一个区块中的事务
+	public int addAgent(Agent agent) {
+		Agent insAgent=new Agent();//方便对传入的agent自定义操作并组合以适配insert
+		insAgent.setAgentName(agent.getAgentName());
+		insAgent.setAgentAddrs(agent.getAgentAddrs());
+		insAgent.setAgentBalance(0);
+		AgentDao agentDao=new AgentDao();
+		int res=agentDao.addNewAgent(insAgent);
+		return res;				
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*public static Transaction genesisTransaction;// 第一个区块中的事务
 	// list of all unspent transactions.
 	public static HashMap<String, TransactionOutput> UTXOs = new HashMap<String, TransactionOutput>();
-
-	public void addNewAgent() {
+*/
+	/*public void addNewAgent() {
 		Agent agent = new Agent();
 
 		Wallet wallet = new Wallet();
@@ -36,5 +60,5 @@ public class NewAgentService {
 		//agent.setMoney(100f);
 		
 		//addNewAgent(agent);插入数据库
-	}
+	}*/
 }

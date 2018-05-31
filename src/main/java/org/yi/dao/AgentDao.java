@@ -12,11 +12,15 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.yi.model.Agent;
 
+import sun.management.resources.agent_es;
+
 @Component
 public class AgentDao {
 
 	private String getStatement = "org.yi.dao.agentMapper.queryAgentWithId";
-	public  String getStatement1 = "org.yi.dao.agentMapper.queryAll";
+	public String getStatement1 = "org.yi.dao.agentMapper.queryAll";
+	private String addStatement = "org.yi.dao.agentMapper.addAgent";
+
 
 	public Agent queryAgentWithId(int agentId) {
 		AgentDao agentDao = new AgentDao();
@@ -32,7 +36,23 @@ public class AgentDao {
 		SqlSession session = agentDao.getSession();
 		List<Agent> agents = session.selectList(statement1);
 		return agents;
+	}
 
+	/**
+	 * 
+	 * @param agent
+	 * @return 1表示添加成功，-1表示添加失败
+	 */
+	public int addNewAgent(Agent agent) {
+		AgentDao agentDao = new AgentDao();
+		String addStatement = agentDao.addStatement;
+		SqlSession session = agentDao.getSession();				
+		int res = session.insert(addStatement, agent);
+		session.commit();
+		if (res > 0) {
+			return 1;
+		}
+		return -1;
 	}
 
 	/**
